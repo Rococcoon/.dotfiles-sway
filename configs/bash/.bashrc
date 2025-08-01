@@ -185,6 +185,9 @@ export PATH=$PATH:/home/lulu/.local/opt/go/bin
 # Export path for maven
 export PATH=$PATH:/home/lulu/.local/opt/apache-maven-3.9.10/bin
 
+# Export path for gradle
+export PATH=$PATH:/home/lulu/.local/opt/gradle-8.14.2/bin
+
 # Export path for alcargo, needed for alacritty
 export PATH="$HOME/.cargo/bin:$PATH"
 
@@ -193,6 +196,12 @@ export TERM=xterm-256color
 # export for java
 export JAVA_HOME=/opt/jdk-24.0.1
 export PATH=$JAVA_HOME/bin:$PATH
+
+# export for hledger
+export LEDGER_FILE="$HOME/IslandOutput/finance/2025/2025.journal"
+
+# export for texlive
+export PATH=/home/lulu/texlive/2025/bin/x86_64-linux:$PATH
 
 export EBITEN_GL_DRIVER=wayland
 alias tiled="QT_QPA_PLATFORM=xcb tiled"

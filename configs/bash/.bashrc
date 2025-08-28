@@ -148,7 +148,7 @@ git_info() {
 PROMPT_COMMAND='PS1="\[\033[38;5;217m\]\u@\h \[\033[38;5;217m\]\W $(git_info) \[\033[38;5;67m\]\$ \[\033[0m\]"'
 
 # Alias for nvim launch
-alias nvim='$HOME/Applications/nvim-linux64/bin/nvim'
+# alias nvim='$HOME/Applications/nvim-linux64/bin/nvim'
 
 # Alias for vial launch
 alias vial='$HOME/Applications/Vial-v0.7.1-x86_64.AppImage'

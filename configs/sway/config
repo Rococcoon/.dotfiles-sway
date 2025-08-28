@@ -36,7 +36,7 @@ include /etc/sway/config-vars.d/*
 #
 # Sway lock
 #
-bindsym $mod+Shift+x exec swaylock -f -i ~/.dotfiles-swayzy/wallpapers/cat_fluffy_walk.jpg
+bindsym $mod+Shift+x exec swaylock -f -i ~/.dotfiles-swayzy/wallpapers/cats/cat_beggar_clothing.jpg
 
 #
 # Power Menu
@@ -48,9 +48,9 @@ bindsym $mod+p exec alacritty -e bubblePowerMenu
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 1000 'swaylock -f -i ~/.dotfiles-swayzy/wallpapers/diego-catto.jpg' \
+         timeout 1000 'swaylock -f -i ~/.dotfiles-swayzy/wallpapers/cats/cat_beggar_clothing.jpg' \
          timeout 1500 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -i ~/.dotfiles-swayzy/wallpapers/cat_fluffy_walk.jpg'
+         before-sleep 'swaylock -f -i ~/.dotfiles-swayzy/wallpapers/cats/cat_beggar_clothing.jpg'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -233,7 +233,7 @@ bar {
 #
 # Set background image on start
 #
-output * bg ~/.dotfiles-swayzy/wallpapers/cat_fluffy_walk.jpg fill
+output * bg ~/.dotfiles-swayzy/wallpapers/cats/cat_beggar_clothing.jpg fill
 
 #
 # Gaps

@@ -18,6 +18,7 @@ remove_existing ~/.bashrc
 remove_existing ~/.config/alacritty
 remove_existing ~/.config/sway
 remove_existing ~/.config/tmux
+remove_existing ~/.config/zellij
 remove_existing ~/.vimrc
 
 # Configuration Files Symlinking
@@ -30,16 +31,20 @@ echo "Old Alacritty configs removed and symlink created."
 ln -sf ~/.dotfiles-sway/configs/bash/.bashrc ~/.bashrc
 echo "Old .bashrc removed and symlink created."
 
-# Tmux
+# Sway
 ln -sf ~/.dotfiles-sway/configs/sway ~/.config/
 echo "Old tmux.conf removed and symlink created."
 
 # Tmux
-ln -sf ~/.dotfiles-sway/configs/tmux ~/.config
+ln -sf ~/.dotfiles-sway/configs/tmux ~/.config/
 echo "Old tmux.conf removed and symlink created."
 
 # Vim
 ln -sf ~/.dotfiles-sway/configs/vim/.vimrc ~/.vimrc
 echo "Old vim configs removed and symlink created."
+
+# Zellij
+ln -sf ~/.dotfiles-sway/configs/zellij ~/.config/
+echo "Old zellij configs removed and symlink created."
 
 echo "All configuration files symlinked and plugins installed successfully."

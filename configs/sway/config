@@ -36,7 +36,7 @@ include /etc/sway/config-vars.d/*
 #
 # Sway lock
 #
-bindsym $mod+Shift+x exec swaylock -f -i ~/.dotfiles-swayzy/wallpapers/cats/cat_beggar_clothing.jpg
+bindsym $mod+x exec swaylock -f -i ~/.dotfiles-sway/wallpapers/cats/cat_glance_tree.jpg
 
 #
 # Power Menu
@@ -48,9 +48,9 @@ bindsym $mod+p exec alacritty -e bubblePowerMenu
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 1000 'swaylock -f -i ~/.dotfiles-swayzy/wallpapers/cats/cat_beggar_clothing.jpg' \
+         timeout 1000 'swaylock -f -i ~/.dotfiles-sway/wallpapers/cats/cat_glance_tree.jpg' \
          timeout 1500 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -i ~/.dotfiles-swayzy/wallpapers/cats/cat_beggar_clothing.jpg'
+         before-sleep 'swaylock -f -i ~/.dotfiles-sway/wallpapers/cats/cat_glance_tree.jpg'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -78,7 +78,7 @@ exec swayidle -w \
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym $mod++q kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
@@ -94,7 +94,7 @@ exec swayidle -w \
     bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaymsg exit
+    bindsym $mod+Shift+x exec swaymsg exit
 #
 # Moving around:
 #
@@ -233,19 +233,19 @@ bar {
 #
 # Set background image on start
 #
-output * bg ~/.dotfiles-swayzy/wallpapers/cats/cat_beggar_clothing.jpg fill
+output * bg ~/.dotfiles-sway/wallpapers/cats/cat_glance_tree.jpg fill
 
 #
 # Gaps
 #
-gaps inner 15
-gaps outer 10
+gaps inner 4
+gaps outer 2
 
 #
 # No titlebars
 #
 for_window [title="^.*"] title_format ""
-default_border pixel 1
+default_border pixel 0
 default_floating_border normal 0
 
 #
@@ -294,7 +294,7 @@ bindsym $mod+w exec brave-browser ---enable-features=UseOzonePlatform --ozone-pl
 #
 # Change background image
 #
-bindsym $mod+b exec "$HOME/.dotfiles-swayzy/scripts/bgswap.sh"
+bindsym $mod+b exec "$HOME/.dotfiles-sway/scripts/general/bgswap.sh"
 
 #
 # screenshoot

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directory containing wallpapers
-WALLPAPER_DIR="$HOME/.dotfiles-swayzy/wallpapers/cats/"
+WALLPAPER_DIR="$HOME/.dotfiles-sway/wallpapers/cats/"
 
 # Pick a random wallpaper from the directory
 WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)

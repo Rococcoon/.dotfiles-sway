@@ -150,6 +150,9 @@ PROMPT_COMMAND='PS1="\[\033[38;5;217m\]\u@\h \[\033[38;5;217m\]\W $(git_info) \[
 # Alias for nvim launch
 # alias nvim='$HOME/Applications/nvim-linux64/bin/nvim'
 
+# Alias for obsidian launch
+# alias obsidian='$HOME/Applications/obsidian-1.9.12 & disown'
+
 # Alias for vial launch
 alias vial='$HOME/Applications/Vial-v0.7.1-x86_64.AppImage'
 
@@ -157,7 +160,7 @@ alias vial='$HOME/Applications/Vial-v0.7.1-x86_64.AppImage'
 alias batman='cat /sys/class/power_supply/BAT0/capacity'
 
 # Alias to change wallpaper
-alias bgswap="$HOME/.dotfiles-swayzy/scripts/bgswap.sh"
+alias bgswap="$HOME/.dotfiles-swayzy/scripts/general/bgswap.sh"
 
 # Alias to launch melonDS
 alias melonds='flatpak run net.kuribo64.melonDS'
@@ -170,6 +173,18 @@ alias azahar='flatpak run org.azahar_emu.Azahar'
 
 # Alias to launch melonDS
 alias melonDS='flatpak run net.kuribo64.melonDS'
+
+# Alias to launch netbeans
+alias netbeans='~/Applications/netbeans/bin/netbeans'
+
+# Alias to launch firefox
+alias firefox='~/Applications/firefox/firefox'
+
+# Alias to for Postgres
+alias createdb='~/.local/opt/postgres/bin/createdb'
+alias pg_ctl='~/.local/opt/postgres/bin/pg_ctl'
+alias psql='~/.local/opt/postgres/bin/psql'
+alias initdb='~/.local/opt/postgres/bin/initdb'
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
@@ -197,11 +212,18 @@ export TERM=xterm-256color
 export JAVA_HOME=/opt/jdk-24.0.1
 export PATH=$JAVA_HOME/bin:$PATH
 
+# export of Ant
+export ANT_HOME=/opt/apache-ant-1.10.15
+export PATH=$PATH:$ANT_HOME/bin
+
 # export for hledger
 export LEDGER_FILE="$HOME/IslandOutput/finance/2025/2025.journal"
 
 # export for texlive
 export PATH=/home/lulu/texlive/2025/bin/x86_64-linux:$PATH
+
+# Set up TeX Live in user space
+export PATH="$HOME/texmf/bin/x86_64-linux:$PATH"
 
 export EBITEN_GL_DRIVER=wayland
 alias tiled="QT_QPA_PLATFORM=xcb tiled"

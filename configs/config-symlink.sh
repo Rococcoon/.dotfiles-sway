@@ -23,23 +23,23 @@ remove_existing ~/.vimrc
 # Configuration Files Symlinking
 
 # Alacritty
-ln -sf ~/.dotfiles-swayzy/configs/alacritty ~/.config/
+ln -sf ~/.dotfiles-sway/configs/alacritty ~/.config/
 echo "Old Alacritty configs removed and symlink created."
 
 # bash
-ln -sf ~/.dotfiles-swayzy/configs/bash/.bashrc ~/.bashrc
+ln -sf ~/.dotfiles-sway/configs/bash/.bashrc ~/.bashrc
 echo "Old .bashrc removed and symlink created."
 
 # Tmux
-ln -sf ~/.dotfiles-swayzy/configs/sway ~/.config/
+ln -sf ~/.dotfiles-sway/configs/sway ~/.config/
 echo "Old tmux.conf removed and symlink created."
 
 # Tmux
-ln -sf ~/.dotfiles-swayzy/configs/tmux ~/.config
+ln -sf ~/.dotfiles-sway/configs/tmux ~/.config
 echo "Old tmux.conf removed and symlink created."
 
 # Vim
-ln -sf ~/.dotfiles-swayzy/configs/vim/.vimrc ~/.vimrc
+ln -sf ~/.dotfiles-sway/configs/vim/.vimrc ~/.vimrc
 echo "Old vim configs removed and symlink created."
 
 echo "All configuration files symlinked and plugins installed successfully."

@@ -198,7 +198,11 @@ bindings = [
   { key = "Down",     mods = "Shift",         action = "ScrollLineDown",    mode = "~Alt" },
   { key = "Home",     mods = "Shift",         action = "ScrollToTop",       mode = "~Alt" },
   { key = "End",      mods = "Shift",         action = "ScrollToBottom",    mode = "~Alt" },
-  { key = "Space",    mods = "Shift",       action = "ToggleViMode",      mode = "~Alt" },
+  { key = "Space",    mods = "Shift",         action = "ToggleViMode",      mode = "~Alt" },
+  { key = "L",        mode = "Vi",            action = "Up" },        # l: Scroll up one line (was k)
+  { key = "K",        mode = "Vi",            action = "Down" },      # k: Scroll down one line (was j)
+  { key = "J",        mode = "Vi",            action = "Left" },          # j: Move selection left (was h)
+  { key = "Semicolon", mode = "Vi",           action = "Right" },         # ;: Move selection right (was l)
 ]
 
 

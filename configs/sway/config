@@ -36,7 +36,8 @@ include /etc/sway/config-vars.d/*
 #
 # Sway lock
 #
-bindsym $mod+x exec swaylock -f -i ~/.dotfiles-sway/wallpapers/cats/cat_glance_tree.jpg
+# bindsym $mod+x exec swaylock -f -i ~/.dotfiles-sway/wallpapers/cats/cat_glance_tree.jpg
+bindsym $mod+x exec swaylock -c 323232
 
 #
 # Power Menu
@@ -47,10 +48,14 @@ bindsym $mod+p exec alacritty -e bubblePowerMenu
 #
 # Example configuration:
 #
+# exec swayidle -w \
+#          timeout 1000 'swaylock -f -i ~/.dotfiles-sway/wallpapers/cats/cat_glance_tree.jpg' \
+#          timeout 1500 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#          before-sleep 'swaylock -f -i ~/.dotfiles-sway/wallpapers/cats/cat_glance_tree.jpg'
 exec swayidle -w \
-         timeout 1000 'swaylock -f -i ~/.dotfiles-sway/wallpapers/cats/cat_glance_tree.jpg' \
+         timeout 1000 'swaylock -f -c 323232' \
          timeout 1500 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -i ~/.dotfiles-sway/wallpapers/cats/cat_glance_tree.jpg'
+         before-sleep 'swaylock -f -c 323232'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -223,17 +228,18 @@ bar {
     status_command while date +'%Y-%m-%d | %H:%M:%S '; do sleep 1; done
 
     colors {
-        statusline #ea9a97
-        background #32323200
-        inactive_workspace #32323200 #32323200 #ea9a97
-        focused_workspace #9ccfd8 #232136 #ea9a97    
+        statusline ea9a97
+        background 32323200
+        inactive_workspace 32323200 32323200 ea9a97
+        focused_workspace 9ccfd8 232136 ea9a97    
         }
 }
 
 #
 # Set background image on start
 #
-output * bg ~/.dotfiles-sway/wallpapers/cats/cat_glance_tree.jpg fill
+# output * bg ~/.dotfiles-sway/wallpapers/cats/cat_glance_tree.jpg fill
+output * bg #323232 solid_color
 
 #
 # Gaps

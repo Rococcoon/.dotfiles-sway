@@ -167,10 +167,10 @@ exec swayidle -w \
     # bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
-    bindsym $mod+t fullscreen
+    bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+t floating toggle
+    bindsym $mod+Rhift+f floating toggle
 
     # Swap focus between the tiling area and the floating area
     bindsym $mod+tab focus mode_toggle
@@ -301,6 +301,11 @@ bindsym $mod+w exec brave-browser ---enable-features=UseOzonePlatform --ozone-pl
 # Change background image
 #
 bindsym $mod+b exec "$HOME/.dotfiles-sway/scripts/general/bgswap.sh"
+
+#
+# Change background image theme
+#
+bindsym $mod+Shift+t exec "$HOME/.dotfiles-sway/scripts/general/theme_change.sh"
 
 #
 # screenshoot

@@ -230,3 +230,4 @@ export PATH="$HOME/texmf/bin/x86_64-linux:$PATH"
 
 export EBITEN_GL_DRIVER=wayland
 alias tiled="QT_QPA_PLATFORM=xcb tiled"
+

@@ -14,7 +14,7 @@ if [ -z "$CURRENT_THEME" ]; then
 fi
 
 # Directory containing wallpapers - NOW CONSTRUCTED using the theme
-WALLPAPER_DIR="$HOME/.dotfiles-sway/wallpapers/cats/$CURRENT_THEME/"
+WALLPAPER_DIR="$HOME/.dotfiles-sway/wallpapers/$CURRENT_THEME/"
 
 # File to store the index of the last used wallpaper (theme-specific state file)
 # This ensures each theme remembers its own position.

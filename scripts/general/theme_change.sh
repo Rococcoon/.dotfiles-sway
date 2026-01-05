@@ -2,7 +2,7 @@
 
 # --- Configuration ---
 # 1. Define all available themes in an array
-THEMES=("autumn" "winter")
+THEMES=("cats_autumn" "cats_general" "cats_winter" "floral_dark")
 
 # 2. Define the control file path
 THEME_FILE="$HOME/.theme/wallpaper_theme.txt"

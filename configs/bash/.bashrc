@@ -189,6 +189,9 @@ alias initdb='~/.local/opt/postgres/bin/initdb'
 # Alias for hotspot connnection script
 alias conn_hotspot='~/.dotfiles-sway/scripts/general/wifi_hotspot_conn.sh'
 
+# Alias for java project setup
+alias java_setup='$HOME/.dotfiles-sway/scripts/dev/java_setup/java_setup.sh'
+
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 . "$HOME/.cargo/env"

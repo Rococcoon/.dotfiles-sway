@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ProjectTemplate" default="test" basedir=".">
+
+    <!-- Define property variables for project directories -->
+    <property name="src.dir" value="src"/>
+    <property name="test.dir" value="test"/>
+    <property name="lib.dir" value="lib"/>
+    <property name="build.dir" value="build"/>
+    <property name="doc.dir" value="doc"/>
+    <property name="main.class" value="Main"/> <path id="junit.classpath">
+        <fileset dir="${lib.dir}" includes="junit-platform-console-standalone-6.0.2.jar"/>
+    </path>
+
+    <target name="clean" description="Clean up build and doc directories">
+        <delete dir="${build.dir}"/>
+        <delete dir="${doc.dir}"/>
+    </target>
+
+    <!-- The 'clean' target deletes the build and dist directories to start fresh -->
+    <target name="init">
+        <mkdir dir="${build.dir}/classes"/>
+        <mkdir dir="${build.dir}/test-classes"/>
+        <mkdir dir="${build.dir}/test-results"/>
+        <mkdir dir="${doc.dir}"/>
+    </target>
+
+    <!-- The 'compile' target creates the build directory and compiles the Java source code -->
+    <target name="compile" depends="init" description="Compile the source code">
+        <javac srcdir="${src.dir}" destdir="${build.dir}/classes" includeantruntime="false" debug="true"/>
+    </target>
+
+    <target name="compile-tests" depends="compile" description="Compile the unit tests">
+        <javac srcdir="${test.dir}" destdir="${build.dir}/test-classes" includeantruntime="false" debug="true">
+            <classpath>
+                <path refid="junit.classpath"/>
+                <pathelement location="${build.dir}/classes"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <!-- The 'jar' builds the jar file for the code -->
+    <target name="jar" depends="compile" description="Package the project into a JAR file">
+        <mkdir dir="${build.dir}/jar"/>
+        <jar destfile="${build.dir}/jar/${ant.project.name}.jar" basedir="${build.dir}/classes">
+            <manifest>
+                <attribute name="Main-Class" value="${main.class}"/>
+            </manifest>
+        </jar>
+        <echo message="JAR created in ${build.dir}/jar/"/>
+    </target>
+
+    <!-- The 'package-submission' packages the project in a zip in the submit directory -->
+    <target name="package-submission" depends="clean" description="Prepare a zip for submission">
+        <zip destfile="submit/submission.zip"
+             basedir="."
+             excludes="build/**, bin/**, .git/**, .idea/**, submit/**"/>
+        <echo message="Submission zip created in the submit/ folder."/>
+    </target>
+
+    <!-- The 'test' targets all tests, run with junit -->
+    <target name="test" depends="compile-tests" description="Run all unit tests">
+        <java jar="${lib.dir}/junit-platform-console-standalone-6.0.2.jar" fork="true" failonerror="true">
+            <arg value="execute"/> 
+            <arg value="--details=tree"/>
+            <arg value="--details-theme=unicode"/>
+            <arg value="--class-path"/>
+            <arg value="${build.dir}/classes:${build.dir}/test-classes"/>
+            <arg value="--scan-class-path"/>
+            <arg value="--reports-dir"/>
+            <arg value="${build.dir}/test-results"/>
+        </java>
+    </target>
+
+    <!-- The 'test-single' targets a single test run with junit -->
+    <target name="test-single" depends="compile-tests" description="Run a single test class">
+        <fail message="Please provide a test class name: -Dtest.class=ClassName" unless="test.class"/>
+        <java jar="${lib.dir}/junit-platform-console-standalone-6.0.2.jar" fork="true" failonerror="true">
+            <arg value="execute"/>
+            <arg value="--details=tree"/>
+            <arg value="--details-theme=unicode"/>
+            <arg value="--class-path"/>
+            <arg value="${build.dir}/classes:${build.dir}/test-classes"/>
+            <arg value="--select-class"/>
+            <arg value="${test.class}"/>
+            <arg value="--reports-dir"/>
+            <arg value="${build.dir}/test-results"/>
+        </java>
+    </target>
+
+    <!-- A target to run the main class. It depends on 'compile' to ensure the code is up-to-date. -->
+    <target name="run" depends="compile" description="Run the main application">
+        <java classname="${main.class}" fork="true" failonerror="true">
+            <classpath>
+                <pathelement location="${build.dir}/classes"/>
+            </classpath>
+        </java>
+    </target>
+
+    <!-- The 'javadoc' target generates documentation from your source code -->
+    <target name="javadoc" description="Generate project documentation">
+        <javadoc destdir="${doc.dir}" author="true" version="true" use="true" windowtitle="Project API">
+            <fileset dir="${src.dir}" includes="**/*.java"/>
+        </javadoc>
+    </target>
+
+    <!-- An 'all' target to run all of the common build processes -->
+    <target name="all" depends="javadoc, run" description="Builds, documents, runs, and tests the project."/>
+
+</project>

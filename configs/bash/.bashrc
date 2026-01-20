@@ -231,3 +231,10 @@ export PATH="$HOME/texmf/bin/x86_64-linux:$PATH"
 export EBITEN_GL_DRIVER=wayland
 alias tiled="QT_QPA_PLATFORM=xcb tiled"
 
+# Set up Android CLI
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export ANDROID_AVD_HOME=$HOME/.android/avd
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin

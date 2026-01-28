@@ -192,6 +192,9 @@ alias conn_hotspot='~/.dotfiles-sway/scripts/general/wifi_hotspot_conn.sh'
 # Alias for java project setup
 alias java_setup='$HOME/.dotfiles-sway/scripts/dev/java_setup/java_setup.sh'
 
+# Alias for wl-recorder with poly headset
+alias wl-rec='$HOME/.dotfiles-sway/scripts/general/wl_rec.sh'
+
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 . "$HOME/.cargo/env"
